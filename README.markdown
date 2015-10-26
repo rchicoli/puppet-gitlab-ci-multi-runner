@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/Jeoffreybauvin/gitlab-ci-multi-runner.svg)](https://travis-ci.org/Jeoffreybauvin/gitlab-ci-multi-runner)
+
 ####Table of Contents
 
 1. [Overview](#overview)
