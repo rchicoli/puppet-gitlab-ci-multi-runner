@@ -1,0 +1,50 @@
+{
+  "name": "jeoffreybauvin-gitlab_ci_multi_runner",
+  "version": "0.0.1",
+  "author": "Jeoffrey Bauvin",
+  "summary": "Puppet module to manage gitlab-ci-multi-runner for Gitlab Continuous Integration — Edit",
+  "license": "Apache-2.0",
+  "source": "https://github.com/Jeoffreybauvin/gitlab-ci-multi-runner",
+  "project_page": "https://github.com/Jeoffreybauvin/gitlab-ci-multi-runner",
+  "issues_url": "https://github.com/Jeoffreybauvin/gitlab-ci-multi-runner/issues",
+  "tags": [
+    "gitlab",
+    "ci",
+    "gitlab-ci-multi-runner",
+    "gitlab"
+  ],
+  "dependencies": [
+    {
+      "name": "puppetlabs/stdlib",
+      "version_requirement": ">=3.2.0 <5.0.0"
+    }
+  ],
+  "requirements": [
+    {
+      "name": "pe",
+      "version_requirement": ">= 3.0.0 < 2015.3.0"
+    },
+    {
+      "name": "puppet",
+      "version_requirement": ">= 3.0.0 < 5.0.0"
+    }
+  ],
+  "operatingsystem_support": [
+    {
+      "operatingsystem": "Debian",
+      "operatingsystemrelease": [
+        "6",
+        "7",
+        "8"
+      ]
+    },
+    {
+      "operatingsystem": "RedHat",
+      "operatingsystemrelease": [
+        "5",
+        "6",
+        "7"
+      ]
+    }
+  ]
+}
