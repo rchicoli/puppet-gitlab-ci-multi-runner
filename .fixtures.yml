@@ -1,0 +1,5 @@
+fixtures:
+  repositories:
+    stdlib: "git://github.com/puppetlabs/puppetlabs-stdlib.git"
+  symlinks:
+    gitlab_ci_multi_runner: "#{source_dir}"
