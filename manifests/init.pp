@@ -23,6 +23,7 @@ class gitlab_ci_multi_runner (
   $user                = $gitlab_ci_multi_runner::params::user,
   $group               = $gitlab_ci_multi_runner::params::group,
   $concurrent          = $gitlab_ci_multi_runner::params::concurrent,
+  $runners             = $gitlab_ci_multi_runner::params::runners,
 ) inherits gitlab_ci_multi_runner::params {
 
   # validate parameters here

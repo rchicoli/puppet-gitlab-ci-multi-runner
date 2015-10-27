@@ -19,4 +19,6 @@ class gitlab_ci_multi_runner::repo::apt {
       'deb'    => true,
     },
   }
+
+  Apt::Source['gitlab-ci-multi-runner']->Package<|tag == 'gitlab-ci-multi-runner'|>
 }

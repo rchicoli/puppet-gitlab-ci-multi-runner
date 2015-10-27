@@ -1,0 +1,95 @@
+
+[[runners]]
+  name = "<%= @name %>"
+  executor = "<%= @executor %>"
+<% if @url -%>
+  url = "<%= @url %>"
+<% end -%>
+<% if @token -%>
+  token = "<%= @token %>"
+<% end -%>
+<% if @limit -%>
+  limit = <%= @limit %>
+<% end -%>
+<% if @shell -%>
+  shell = "<%= @shell %>"
+<% end -%>
+<% if @builds_dir -%>
+  builds_dir = "<%= @builds_dir %>"
+<% end -%>
+<% if @environment -%>
+  environment = <%= @environment %>
+<% end -%>
+<% if @disable_verbose -%>
+  disable_verbose = <%= @disable_verbose %>
+<% end -%>
+<% if @output_limit -%>
+  output_limit = <%= @output_limit %>
+<% end -%>
+<% if executor == 'docker' -%>
+  [runners.docker]
+  <%- if @docker_params['host'] -%>
+    host = "<%= @docker_params['host'] %>"
+  <%- end -%>
+  <%- if @docker_params['hostname'] -%>
+    hostname = "<%= @docker_params['hostname'] %>"
+  <%- end -%>
+  <%- if @docker_params['tls_cert_path'] -%>
+    tls_cert_path = "<%= @docker_params['tls_cert_path'] %>"
+  <%- end -%>
+  <%- if @docker_params['disable_cache'] -%>
+    disable_cache = <%= @disable_cache %>
+  <%- end -%>
+  <%- if @docker_params['wait_for_services_timeout'] -%>
+    wait_for_services_timeout = <%= @wait_for_services_timeout %>
+  <%- end -%>
+  <%- if @docker_params['cache_dir'] -%>
+    cache_dir = "<%= @cache_dir %>"
+  <%- end -%>
+  <%- if @docker_params['extra_hosts'] -%>
+    extra_hosts = <%= @extra_hosts %>
+  <%- end -%>
+  <%- if @docker_params['links'] -%>
+    links = <%= @links %>
+  <%- end -%>
+  <%- if @docker_params['services'] -%>
+    services = <%= @services %>
+  <%- end -%>
+  <%- if @docker_params['image'] -%>
+    image = "<%= @docker_params['image'] %>"
+  <%- end -%>
+    allowed_images = <%= @docker_params['allowed_images'] %>
+    allowed_services = <%= @docker_params['allowed_services'] %>
+    privileged = <%= @docker_params['privileged'] %>
+    volumes = <%= @docker_params['volumes'] %>
+<% end -%>
+<% if executor == 'parallels' -%>
+  [runners.parallels]
+  <%- if @parallels_params['base_name'] -%>
+    base_name = "<%= @docker_params['base_name'] %>"
+  <%- end -%>
+  <%- if @parallels_params['template_name'] -%>
+    template_name = "<%= @parallels_params['template_name'] %>"
+  <%- end -%>
+  <%- if @parallels_params['disable_snapshots'] -%>
+    disable_snapshots = <%= @parallels_params['disable_snapshots'] %>
+  <%- end -%>
+<%- end -%>
+<% if executor == 'ssh' -%>
+  [runners.ssh]
+  <%- if @ssh_params['host'] -%>
+    host = "<%= @ssh_params['host'] %>"
+  <%- end -%>
+  <%- if @ssh_params['port'] -%>
+    port = "<%= @ssh_params['port'] %>"
+  <%- end -%>
+  <%- if @ssh_params['user'] -%>
+    user = "<%= @ssh_params['user'] %>"
+  <%- end -%>
+  <%- if @ssh_params['password'] -%>
+    password = "<%= @ssh_params['password'] %>"
+  <%- end -%>
+  <%- if @ssh_params['identity_file'] -%>
+    identity_file = "<%= @ssh_params['identity_file'] %>"
+  <%- end -%>
+<% end -%>

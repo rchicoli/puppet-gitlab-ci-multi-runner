@@ -11,6 +11,7 @@ class gitlab_ci_multi_runner::params {
   $group               = 'gitlab-runner'
 
   $concurrent          = 1
+  $runnners            = undef
 
   case $::osfamily {
     'Debian': {
