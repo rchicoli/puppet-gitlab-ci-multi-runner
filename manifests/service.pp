@@ -6,9 +6,10 @@
 class gitlab_ci_multi_runner::service {
 
   service { $gitlab_ci_multi_runner::service_name:
-    ensure     => running,
-    enable     => true,
+    ensure     => $gitlab_ci_multi_runner::service_ensure,
+    enable     => $gitlab_ci_multi_runner::service_enable,
     hasstatus  => true,
     hasrestart => true,
   }
+
 }
