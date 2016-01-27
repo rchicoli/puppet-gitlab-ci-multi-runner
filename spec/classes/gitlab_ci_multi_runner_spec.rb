@@ -32,6 +32,12 @@ describe 'gitlab_ci_multi_runner', :type => :class do
           it { should contain_package('gitlab-ci-multi-runner').with_name('gitlab-ci-multi-runner').with_ensure('present') }
 
           it { should contain_package('apt-transport-https').with_ensure('present') }
+
+          context 'with service_enable set to false' do
+            let(:params) { {'service_enable' => false} }
+            it { should_not contain_service('gitlab-ci-multi-runner') }
+          end
+
         end
       end
     end

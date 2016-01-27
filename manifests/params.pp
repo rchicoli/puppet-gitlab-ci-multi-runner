@@ -13,18 +13,23 @@ class gitlab_ci_multi_runner::params {
   $runners             = undef
 
   $service_ensure      = true
-  $service_enable      = true
+  $service_start       = '/usr/bin/gitlab-ci-multi-runner start'
+  $service_stop        = '/usr/bin/gitlab-ci-multi-runner stop'
+  $service_status      = '/usr/bin/gitlab-ci-multi-runner status'
+  $service_restart     = '/usr/bin/gitlab-ci-multi-runner restart'
 
   case $::osfamily {
     'Debian': {
       $package_name        = 'gitlab-ci-multi-runner'
       $service_name        = 'gitlab-runner'
       $manage_package_repo = true
+      $service_enable      = false
     }
     'RedHat': {
       $package_name        = 'gitlab_ci_multi_runner'
       $service_name        = 'gitlab_ci_multi_runner'
       $manage_package_repo = false
+      $service_enable      = true
     }
     default: {
       fail("${::operatingsystem} not supported")
