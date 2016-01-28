@@ -10,7 +10,7 @@ class gitlab_ci_multi_runner::params {
   $group               = 'gitlab-runner'
 
   $concurrent          = 1
-  $runners             = undef
+  $runners             = {}
 
   $service_ensure      = true
   $service_start       = '/usr/bin/gitlab-ci-multi-runner start'
