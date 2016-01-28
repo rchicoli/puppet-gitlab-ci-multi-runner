@@ -37,13 +37,33 @@ If your module requires anything extra before setting up (pluginsync enabled, et
 
 ###Beginning with gitlab_ci_multi_runner
 
-The very basic steps needed for a user to get the module up and running. 
+To use the gitlab_ci_multi_runner with default parameters, declare the ```gitlab_ci_multi_runner``` class.
 
-If your most recent release breaks compatibility or requires particular steps for upgrading, you may wish to include an additional section here: Upgrading (For an example, see http://forge.puppetlabs.com/puppetlabs/firewall).
+```puppet
+include gitlab_ci_multi_runner
+```
+
+**Note:** The main gitlab_ci_multi_runner class is required by all other classes, types, and defines in this module. You must declare it whenever you use the module.
 
 ##Usage
 
-Put the classes, types, and resources for customizing, configuring, and doing the fancy stuff with your module here. 
+### Hiera
+
+```hiera
+gitlab_ci_multi_runner::runners:
+  'host01-ssh':
+    url: 'https://gitlab.example.com/ci'
+    token: 'abb0d7b09e8491ccc6a0d4264fc319ca'
+    tls_skip_verify: true
+    tls_ca_file: '/usr/local/share/ca-certificates/ca.crt'
+    executor: 'ssh'
+    ssh_params:
+      host: "%{::fqdn}"
+      port: '22'
+      user: 'gitlab-runner'
+      password: 'strongpassword'
+      identity_file: ''
+```
 
 ##Reference
 
