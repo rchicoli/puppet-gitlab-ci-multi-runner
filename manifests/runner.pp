@@ -60,6 +60,7 @@ define gitlab_ci_multi_runner::runner (
   $disable_verbose = undef,
   $output_limit = undef,
   $docker_params = undef,
+  $ssh_params = undef,
   $parallels_params = undef,
   $config_file = $gitlab_ci_multi_runner::params::config_file,
   $tls_skip_verify = undef,
