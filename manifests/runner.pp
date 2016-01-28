@@ -63,6 +63,7 @@ define gitlab_ci_multi_runner::runner (
   $parallels_params = undef,
   $config_file = $gitlab_ci_multi_runner::params::config_file,
   $tls_skip_verify = undef,
+  $tls_ca_file = undef,
 ){
 
   concat::fragment { "${name}_${gitlab_ci_multi_runner::config_file}":
