@@ -26,6 +26,9 @@
 <% if @output_limit -%>
   output_limit = <%= @output_limit %>
 <% end -%>
+<% if @tls_skip_verify -%>
+  tls_skip_verify = <%= @tls_skip_verify %>
+<% end -%>
 <% if executor == 'docker' -%>
   [runners.docker]
   <%- if @docker_params['host'] -%>
