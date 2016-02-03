@@ -21,7 +21,4 @@ class gitlab_ci_multi_runner::config (
     order   => '01',
   }
 
-  if $gitlab_ci_multi_runner::runners {
-    create_resources(gitlab_ci_multi_runner::runner, $runners)
-  }
 }

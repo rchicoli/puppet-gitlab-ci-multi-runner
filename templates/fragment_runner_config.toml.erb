@@ -1,6 +1,8 @@
 
 [[runners]]
+<% if @name -%>
   name = "<%= @name %>"
+<% end -%>
   executor = "<%= @executor %>"
 <% if @url -%>
   url = "<%= @url %>"
@@ -25,6 +27,12 @@
 <% end -%>
 <% if @output_limit -%>
   output_limit = <%= @output_limit %>
+<% end -%>
+<% if @tls_skip_verify -%>
+  tls_skip_verify = <%= @tls_skip_verify %>
+<% end -%>
+<% if @tls_ca_file -%>
+  tls_ca_file = "<%= @tls_ca_file %>"
 <% end -%>
 <% if executor == 'docker' -%>
   [runners.docker]

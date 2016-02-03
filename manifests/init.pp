@@ -45,7 +45,11 @@ class gitlab_ci_multi_runner (
   $config_file         = $gitlab_ci_multi_runner::params::config_file,
 ) inherits gitlab_ci_multi_runner::params {
 
-  # validate parameters here
+  validate_hash($gitlab_ci_multi_runner::runners)
+
+  if $gitlab_ci_multi_runner::runners {
+    create_resources(gitlab_ci_multi_runner::runner, $runners)
+  }
 
   anchor { 'before_gitlab_ci_multi_runner': } ->
   class { 'gitlab_ci_multi_runner::install': } ->
