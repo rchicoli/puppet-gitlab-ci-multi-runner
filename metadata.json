@@ -1,6 +1,6 @@
 {
   "name": "jeoffreybauvin-gitlab_ci_multi_runner",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "Jeoffrey Bauvin",
   "summary": "Puppet module to manage gitlab-ci-multi-runner for Gitlab Continuous Integration",
   "license": "Apache-2.0",
