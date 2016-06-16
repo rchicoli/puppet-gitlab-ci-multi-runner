@@ -34,7 +34,7 @@
 <% if @tls_ca_file -%>
   tls_ca_file = "<%= @tls_ca_file %>"
 <% end -%>
-<% if executor == 'docker' -%>
+<% if @executor == 'docker' -%>
   [runners.docker]
   <%- if @docker_params['host'] -%>
     host = "<%= @docker_params['host'] %>"
@@ -71,7 +71,7 @@
     privileged = <%= @docker_params['privileged'] %>
     volumes = <%= @docker_params['volumes'] %>
 <% end -%>
-<% if executor == 'parallels' -%>
+<% if @executor == 'parallels' -%>
   [runners.parallels]
   <%- if @parallels_params['base_name'] -%>
     base_name = "<%= @docker_params['base_name'] %>"
@@ -83,7 +83,7 @@
     disable_snapshots = <%= @parallels_params['disable_snapshots'] %>
   <%- end -%>
 <%- end -%>
-<% if executor == 'ssh' -%>
+<% if @executor == 'ssh' -%>
   [runners.ssh]
   <%- if @ssh_params['host'] -%>
     host = "<%= @ssh_params['host'] %>"
